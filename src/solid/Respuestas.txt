@@ -1,0 +1,15 @@
+El primer principio violado es el de SRP ya que la clase BooKStore estaba teniendo mas de una responsabilidad debido a que 
+reliazaba tanto cambios referente a los libros y a la vez manejaba los pagos , asi mismo , la clase Book tambien esataba 
+yendo en contra del principio SRP porque a demas de manejar la identidad de un libro tambien estaba relizando acciones en el 
+inventario competentes a la clase StoreBook.
+
+El segundo principio que se estaba violando era OCP porque al estar los metodos pay dentro de la clase BookStore si queremos 
+hacer una modificacion a la forma de pago tendriamos que cambiar dicha clase en vez de tener una clase Pay dedicada a las formas de pago.
+
+Tambien se ve violado el principio DIP porque no hay colaboracion entre clases y la doble responsabilidad que tenia StoreBook podria ocasionar un efecto
+de bola de nieve al momento de querer cambiar parte del codigo en las formas de pagos.
+
+Se creo la interfaz payments que es implementada por cliente para que este sea el encargado de manejar los pagos y si en futuro se desea agregar nuevas 
+clases que puedan efecturar pagos , estas las puedan implementar.
+
+Ademas se creo una clase abstracta Articulo si en el futuro la libreria desea vender otros articulos ademas de libros como revistas , comics , etc.

@@ -9,22 +9,21 @@ package solid;
  *
  * @author CltControl
  */
-public class Book {
+public class Book extends Articulo {
     String title;
 	String author;
 	String category;
-	float price;
 	boolean state;
-	
-	public Book(String title, String author, String category,float price) {
-		this.title = title;
-		this.author = author;
-		this.category = category;
-		this.price = price;
-		state = false;
-		
-	}
 
+    public Book(String title, String author, String category, boolean state, String nomArticulo, float precio) {
+        super(nomArticulo, precio);
+        this.title = title;
+        this.author = author;
+        this.category = category;
+        this.state = state;
+    }
+	
+	
 	String getTitle() {
 		return title;
 	}
@@ -37,10 +36,6 @@ public class Book {
 	void setAuthor(String author) {
 		this.author = author;
 	}
-	void searchBook() {
-		/*
-		 * Search a book for author or title or category
-		 */
-	}
+	
 
 }
